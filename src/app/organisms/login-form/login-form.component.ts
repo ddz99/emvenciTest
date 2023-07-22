@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-form',
@@ -11,7 +12,7 @@ export class LoginFormComponent implements OnInit {
   loginForm: FormGroup;
   loginError: boolean = false;
 
-  constructor(private formBuilder: FormBuilder, private authService: AuthService) {}
+  constructor(private router: Router, private formBuilder: FormBuilder, private authService: AuthService) {}
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
@@ -25,16 +26,14 @@ export class LoginFormComponent implements OnInit {
       const username = this.loginForm.get('username').value;
       const password = this.loginForm.get('password').value;
 
-      // Replace this with the actual authentication logic using your AuthService.
       this.authService.login(username, password).subscribe(
         (response) => {
-          // Handle successful login here
           console.log(response);
           localStorage.setItem("jwt", response);
           this.loginError = false;
+          this.router.navigate(['/table']);
         },
         (error) => {
-          // Handle login error here
           console.error(error);
           this.loginError = true;
         }

@@ -13,6 +13,7 @@ import { LoginFormComponent } from './organisms/login-form/login-form.component'
 import { PageComponent } from './templates/page/page.component';
 import { HomeComponent } from './pages/home/home.component';
 import { DisplayBigComponent } from './molecules/display-big/display-big.component';
+import { TableComponent } from './pages/table/table.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { DisplayBigComponent } from './molecules/display-big/display-big.compone
     LoginFormComponent,
     PageComponent,
     HomeComponent,
-    DisplayBigComponent
+    DisplayBigComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,5 @@
 
-$login_form_padding: 16px;
+$login_form_padding: 32px;
 
 .login_form .container{
 
@@ -13,7 +13,15 @@ $login_form_padding: 16px;
   display: flex;
   flex-direction: column;
 
+  border-radius: 8px;
+
   padding: $login_form_padding;
+  padding-top: $login_form_padding+8;
+  padding-bottom: $login_form_padding+16;
 
   background-color: #fff;
+}
+
+.login_form .btn--state-cta{
+  margin-top: 8px;
 }
