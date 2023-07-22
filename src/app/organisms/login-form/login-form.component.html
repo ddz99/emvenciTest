@@ -1,7 +1,7 @@
-<form role="form" [formGroup]="loginForm" (submit)="onSubmit()">
-  <div class="form__contact__info d-flex">
-    <app-input class="d-flex w-100 form__input" [formName]="$any(loginForm.get('username'))" type="text" placeholder="Username" width="100%"></app-input>
-    <app-input class="d-flex w-100 form__input" [formName]="$any(loginForm.get('password'))" type="password" placeholder="Password" width="100%"></app-input>
+<form role="" [formGroup]="loginForm" (submit)="onSubmit()">
+  <div class="">
+    <app-input class="" [formName]="$any(loginForm.get('username'))" type="text" placeholder="Username" width="100%"></app-input>
+    <app-input class="" [formName]="$any(loginForm.get('password'))" type="password" placeholder="Password" width="100%"></app-input>
   </div>
-  <app-button class="d-flex justify-content-center mt-1" fontSize="0.8rem" bgColor="#A32B00" borderRadius="24px" text="Submit"></app-button>
+  <app-button class="d-flex justify-content-center mt-1" fontSize="1rem" bgColor="#A32B00" borderRadius="16px" text="Submit"></app-button>
 </form>
