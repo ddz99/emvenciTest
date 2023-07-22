@@ -19,9 +19,10 @@ export class AuthService {
 
     return this.http.post<any>(`${this.apiUrl}/login`, loginData).pipe(
       map((response) => {
-        localStorage.setItem("jwt", response);
+        return response;
       }),
       catchError((error) => {
+        // Handle error if the request fails
         return of(error);
       })
     );

@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from '../services/auth.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
+  selector: 'app-login-form',
+  templateUrl: './login-form.component.html',
+  styleUrls: ['./login-form.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginFormComponent implements OnInit {
   loginForm: FormGroup;
   loginError: boolean = false;
 
@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
         (response) => {
           // Handle successful login here
           console.log(response);
+          localStorage.setItem("jwt", response);
           this.loginError = false;
         },
         (error) => {
