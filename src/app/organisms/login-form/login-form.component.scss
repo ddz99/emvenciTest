@@ -1,0 +1,19 @@
+
+$login_form_padding: 16px;
+
+.login_form .container{
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.login_form {
+  display: flex;
+  flex-direction: column;
+
+  padding: $login_form_padding;
+
+  background-color: #fff;
+}

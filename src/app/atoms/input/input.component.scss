@@ -10,7 +10,6 @@ input[type="text"],
 input[type="email"],
 input[type="password"],
 textarea {
-  width: 100%;
   padding: $input-padding;
   font-size: $input-font-size;
   border: 1px solid $secondary-color;
@@ -27,30 +26,3 @@ textarea {
     color: $secondary-color;
   }
 }
-
-// Styling for specific input types
-// input[type="checkbox"],
-// input[type="radio"] {
-//   margin-right: 8px;
-// }
-
-// input[type="submit"],
-// button {
-//   padding: 12px 20px;
-//   font-size: 18px;
-//   border: none;
-//   border-radius: $input-border-radius;
-//   color: #fff;
-//   background-color: $primary-color;
-//   cursor: pointer;
-//   transition: background-color 0.3s ease;
-  
-//   &:hover {
-//     background-color: darken($primary-color, 10%);
-//   }
-  
-//   &:focus {
-//     outline: none;
-//     box-shadow: 0 0 5px $primary-color;
-//   }
-// }

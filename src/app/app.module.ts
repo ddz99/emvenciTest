@@ -12,6 +12,7 @@ import { InputComponent } from './atoms/input/input.component';
 import { LoginFormComponent } from './organisms/login-form/login-form.component';
 import { PageComponent } from './templates/page/page.component';
 import { HomeComponent } from './pages/home/home.component';
+import { DisplayBigComponent } from './molecules/display-big/display-big.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HomeComponent } from './pages/home/home.component';
     InputComponent,
     LoginFormComponent,
     PageComponent,
-    HomeComponent
+    HomeComponent,
+    DisplayBigComponent
   ],
   imports: [
     BrowserModule,
