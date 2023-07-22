@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms'
+import { MatTableModule } from '@angular/material/table'  
 
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +15,10 @@ import { PageComponent } from './templates/page/page.component';
 import { HomeComponent } from './pages/home/home.component';
 import { DisplayBigComponent } from './molecules/display-big/display-big.component';
 import { TableComponent } from './pages/table/table.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DataTableComponent } from './organisms/data-table/data-table.component';
+
+import { JwtInterceptor } from './http-interceptor/auth-interceptor';
 
 @NgModule({
   declarations: [
@@ -25,7 +30,9 @@ import { TableComponent } from './pages/table/table.component';
     PageComponent,
     HomeComponent,
     DisplayBigComponent,
-    TableComponent
+    TableComponent,
+    DataTableComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -33,8 +40,12 @@ import { TableComponent } from './pages/table/table.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    MatTableModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
