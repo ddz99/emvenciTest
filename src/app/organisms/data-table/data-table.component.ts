@@ -8,7 +8,7 @@ import { DataService } from '../../services/data.service';
 })
 export class DataTableComponent implements OnInit {
   dataSource: any[] = [];
-  displayedColumns: string[] = ['username', 'password', 'age', 'name'];
+  displayedColumns: string[] = ['username', 'password', 'age', 'name', 'family', 'role'];
 
   constructor(private dataService: DataService) {}
 
