@@ -28,8 +28,6 @@ export class LoginFormComponent implements OnInit {
 
       this.authService.login(username, password).subscribe(
         (response) => {
-          console.log(response);
-          localStorage.setItem("token", response.token);
           this.loginError = false;
           this.router.navigate(['/table']);
         },

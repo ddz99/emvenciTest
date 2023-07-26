@@ -19,6 +19,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DataTableComponent } from './organisms/data-table/data-table.component';
 
 import { JwtInterceptor } from './http-interceptor/auth-interceptor';
+import { LogoComponent } from './atoms/logo/logo.component';
+import { HeaderNavComponent } from './molecules/header-nav/header-nav.component';
+import { NavLinksComponent } from './atoms/nav-links/nav-links.component';
+import { HeaderComponent } from './organisms/header/header.component';
+import { UserComponent } from './atoms/user/user.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +37,11 @@ import { JwtInterceptor } from './http-interceptor/auth-interceptor';
     DisplayBigComponent,
     TableComponent,
     DataTableComponent,
+    LogoComponent,
+    HeaderNavComponent,
+    NavLinksComponent,
+    HeaderComponent,
+    UserComponent,
     
   ],
   imports: [

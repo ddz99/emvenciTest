@@ -19,6 +19,7 @@ export class AuthService {
 
     return this.http.post<any>(`${this.apiUrl}/login`, loginData).pipe(
       map((response) => {
+        localStorage.setItem("token", response.token);
         return response;
       }),
       catchError((error) => {
@@ -27,5 +28,8 @@ export class AuthService {
       })
     );
   }
-
+  isLoggedIn(): boolean {
+    //should check for exp date too
+    return !!localStorage.getItem('token');
+  }
 }

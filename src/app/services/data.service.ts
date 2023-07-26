@@ -9,7 +9,7 @@ import { catchError, map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class DataService {
-  private apiUrl = 'https://backend1.recruitment.cybersecurity.cloud/api'; // Replace with your API URL
+  private apiUrl = 'https://backend1.recruitment.cybersecurity.cloud/api'; 
 
   constructor(private http: HttpClient) {}
 
