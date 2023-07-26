@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
@@ -12,7 +12,7 @@ export class LoginFormComponent implements OnInit {
   loginForm: FormGroup;
   loginError: boolean = false;
 
-  constructor(private router: Router, private formBuilder: FormBuilder, private authService: AuthService) {}
+  constructor(private router: Router, private formBuilder: FormBuilder, private authService: AuthService, private cdRef: ChangeDetectorRef) {}
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
@@ -29,7 +29,8 @@ export class LoginFormComponent implements OnInit {
       this.authService.login(username, password).subscribe(
         (response) => {
           this.loginError = false;
-          this.router.navigate(['/table']);
+          this.cdRef.detectChanges(); // Trigger change detection to update the UI
+          this.router.navigate(['/persons']);
         },
         (error) => {
           console.error(error);

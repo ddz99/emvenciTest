@@ -7,9 +7,15 @@ import { catchError, map } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class AuthService {
+
   private apiUrl = 'https://backend1.recruitment.cybersecurity.cloud/api';
 
   constructor(private http: HttpClient) {}
+
+  logout(): boolean {
+    localStorage.removeItem('token');
+    return true;
+  }
 
   login(username: string, password: string): Observable<any> {
     const loginData = {
@@ -30,6 +36,7 @@ export class AuthService {
   }
   isLoggedIn(): boolean {
     //should check for exp date too
+    console.log(!!localStorage.getItem('token'))
     return !!localStorage.getItem('token');
   }
 }

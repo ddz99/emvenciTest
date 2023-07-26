@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of} from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
-
+import { Router,NavigationEnd  } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -13,9 +13,9 @@ export class DataService {
 
   constructor(private http: HttpClient) {}
 
-  getData(): Observable<any> {
+  getData(routeName: string): Observable<any> {
 
-    return this.http.get<any>(`${this.apiUrl}/persons`).pipe(
+    return this.http.get<any>(`${this.apiUrl}/${routeName}`).pipe(
       map((response) => {
         return response;
       }),
